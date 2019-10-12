@@ -1,0 +1,36 @@
+/* The Basics */
+body {margin:1em 2em; line-height:1.6; font-size:16px;
+	font-family:serif, Georgia;}
+
+a {color:#000; text-decoration:none; border-bottom:1px solid #bbb;
+	-webkit-transition-property:color; 
+	-webkit-transition-duration: 0.2s, 0.2s; 
+	-webkit-transition-timing-function: linear, ease-in;}
+a:hover {border-bottom:1px solid #999;}
+dt {color:#777;}
+	dt cite {font-weight:bold;}
+dd {margin-bottom:1em; margin-left:0;}
+h2, h3, h4 {margin-top:2em; border-bottom:1px solid #ddd;}
+	h4 {color:#aaa;}
+q:before {content:"\201C";}
+q:after {content:"\201D";}
+
+/* Specifics */
+.sh {background-color:rgba(255,255,255,0.9); padding-top:1em; border-bottom:1px solid #ddd; font-size:1.5em; font-weight:bold;}
+.divider {border-bottom:1px dashed #aaa; margin-bottom:18px;}
+
+#footer {margin:30px 0 0 0; color:#aaa; font-size:0.8em;}
+#blog_container img {margin:10px 0;}
+
+/* Making thinsg responsive */
+/* Landscape phones and down */
+@media (max-device-width: 480px) {
+	body {font-size:54px; margin:1.5em;}
+	#blog_container img {width:100%;}
+}
+/* Large desktop */
+@media (min-width: 1000px) {
+	body {font-size:18px;}
+	#public {width:60%;}
+	#blog_container {margin:0 auto; width:60%;}
+}

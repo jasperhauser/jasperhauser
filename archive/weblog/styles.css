@@ -1,0 +1,302 @@
+body {
+margin : 0;
+padding : 0;
+font-size : 11px;
+font-family : Verdana, sans-serif;
+line-height : 1.8em;
+background-image :url(media/pattern1.jpg);
+background-repeat : repeat-x;
+background-color:#eaeaea;
+min-width:700px;
+}
+
+/* Main layout styles */
+#center {
+margin : auto;
+width : 645px;
+}
+#wrapper {
+float:right;
+width : 645px;
+background-color:white;
+}
+#header {
+float:right;
+margin-bottom:25px;
+width : 645px;
+height : 121px;
+background-image :url(media/header_04.gif);
+background-repeat : no-repeat;
+background-color:#000;
+border-bottom:1px dotted #fff;
+top : 0;
+
+}
+#sidebar {
+  float: right;
+  margin-top:0px;
+  width : 190px;
+  clear: both;
+}
+#main {
+float: right;
+margin-top:0px;
+margin-right: 30px;
+width : 410px;
+}
+#footer {
+  float:left;
+  margin-left:0;
+	margin-top: 20px; 
+  padding: 1em 0; 
+  width: 645px; 
+  border-top: 1px dotted #ddd;
+  color: #555;
+  background-color:black;
+}
+#corner {
+  visibility:hidden;
+  opacity: 0.9;
+  position : absolute;
+  width : 81px;
+  height : 81px;
+  right : 0;
+  top : 0;
+  background-image : url(media/corner.gif);
+}
+/* end of Main layout styles */
+
+/* sponsor css */
+.sponsor {display:none; margin:30px 0; padding:0 15px 0 0;line-height: 1.3em;font-size:10px;}
+.oeps {margin:-5px 0 20px 0;}
+/* end of sponsor css */
+
+a {
+text-decoration : none;
+color : #000;
+border-color : #ddd;
+border-width : 0 0 1px;
+border-style : none none solid;
+padding : 3px 0 2px;
+}
+a:hover {
+color : #000;
+text-decoration : none;
+background-color : #ddd;
+border-color : #ddd;
+}
+.sidebar-list a { 
+  color:#777;
+  border-width:0;
+}
+.post {
+margin : 10px 0;
+padding : 4px;
+border : 1px solid #ccc;
+}
+a.imagelink {
+  text-decoration : none;
+  border-color : #ccc;
+  border-width : 0;
+  border-style : none;
+  padding : 0px;
+}
+a.imagelink:hover {
+  background-color : #fff;
+}
+a.imagelink img:hover{
+  border : 1px dashed #000;
+}
+h1 {
+font-family : Garamond, Times;
+font-size : 18px;
+margin : 0 0 10px;
+}
+h2 {
+font-family : Garamond, Times;
+font-size : 18px;
+margin : 0 ;
+color:#555;
+}
+h4 {
+font-weight : bold;
+font-size : 11px;
+color : #999;
+margin : 0 0 5px;
+}
+h5 {
+font-weight : normal;
+font-size : 11px;
+color : #999;
+margin : 0 0 5px;
+}
+h5 a{
+  color : #999;
+}
+blockquote {
+margin : 1.5em 0 2em 1em;
+padding : 0 0.75em 0 1.25em;
+border-left : 1px solid #ddd;
+}
+div.hr {
+  background-image : url(media/footer.gif);
+  background-repeat : no-repeat;
+  background-position : center;
+  border : 0px solid white;
+  border-color : #fff;
+  padding : 60px 0 60px 0;
+  height : 0;
+}
+div.hr hr {
+  display: none;
+}
+ul, ol {
+  padding-left : 1em;
+  margin : 0.2em 0 0.5em 1em;
+}
+a.white {
+  color:#777; 
+  border-color:
+  #777;
+}
+#title {
+  position:relative; 
+  top:25px; 
+  left:25px; 
+  color:black; 
+  font-family : Garamond, Times;  
+  font-weight:bold; 
+  line-height:2.4em;
+}
+.title {
+  padding:5px; 
+  font-size : 24px; 
+  background-color:white;
+}
+.title a {
+  color:black; 
+  border:none; 
+  background-color:white;
+}
+.title a:hover {
+  text-decoration:underline;
+}
+.description {
+  padding:5px;
+  font-size : 14px; 
+  background-color:white;
+}
+.textpost {
+    margin : 5px 0 10px;
+}
+.tags {
+	background:url("media/tags.gif") no-repeat center left;
+	padding:0 0 0 13px;
+}
+.control-home {
+	background:url("media/home.gif") no-repeat center left;
+	padding:0 0 0 13px;
+}
+.control-create {
+	background:url("media/edit.gif") no-repeat center left;  
+	padding:0 0 0 13px;
+}
+.control-comment {
+	background:url("media/comment.gif") no-repeat center left; 
+	padding:0 0 0 13px;
+	margin:0 15px 0 0;
+}
+.control-email {
+	background:url("media/mail.gif") no-repeat center left; 
+	padding:0 0 0 13px;
+	margin:0 15px 0 0;
+}
+#b-backlink {
+  background:url("media/link.gif") no-repeat center left; 
+	padding:3px 0 2px 13px;
+	margin:0 15px 0 0;
+}
+#b-backlink:hover{
+  background-color : #ddd;
+}
+.digg {
+	background:url("media/digg.gif") no-repeat center left; 
+	padding:0 0 0 13px;
+	margin:0 15px 0 0;
+}
+.control-post {
+	background:url("media/post.gif") no-repeat center left; 
+	padding:0 0 0 13px;
+}
+.control-time {
+	background:url("media/time.gif") no-repeat center left; 
+	padding:0 0 0 13px;
+}
+/* .control-author {
+	background:url("media/author.gif") no-repeat center left; 
+	padding:0 0 0 11px;
+} */
+ul.sidebar-list {
+  margin-bottom:20px;
+}
+ul#links {
+  list-style-image:url(media/link.gif);
+}
+ul#posts {
+  list-style-image:url(media/post.gif);
+}
+ul#archives {
+  list-style-image:url(media/archive.gif);
+}
+li.mail-me {
+  list-style-image:url(media/mail.gif);
+}
+li.aim-me {
+  list-style-image:url(http://big.oscar.aol.com/jApPiehAuser?on_url=http://www.jasperhauser.nl/weblog/media/aim_online.gif&amp;off_url=http://www.jasperhauser.nl/weblog/media/aim_offline.gif);
+}
+li.skype-me {
+  list-style-image:url(media/skype.gif);
+}
+li.vcard {
+  list-style-image:url(media/vcard.gif);
+}
+li.delicious {
+  list-style-image:url(media/delicious.gif);
+}
+li.feed {
+  list-style-image:url(media/feed.gif);
+}
+.comment-data {
+  background:url("media/comment.gif") no-repeat center left;
+  padding:0 0 0 15px; 
+  margin:0.5em 0 .5em;
+}
+/* Quick edit and Delete comments icons*/
+.item-control {
+   display:none;
+}
+.item-control a, .item-action a {
+   text-decoration:none !important;
+}
+.email-post-icon {
+	background:url("media/mail.gif") no-repeat center left;
+	padding:0 0 0 4px;
+}
+.email-post-icon:after {
+	content:" E-mail page";
+}
+.quick-edit-icon {
+	background:url("media/edit.gif") no-repeat center left; 
+	padding:0 0 0 4px;
+}
+.quick-edit-icon:after {
+	content:" Edit post";
+}
+.delete-comment-icon {
+	background:url("media/delete.gif") no-repeat center left; 
+	padding:0 0 0 4px;
+
+}
+.delete-comment-icon:after {
+	content:" Delete comment ";
+}
