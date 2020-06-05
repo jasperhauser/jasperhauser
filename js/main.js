@@ -75,7 +75,7 @@ $(document).ready(function() {
 			$("#name").focus();
 		} else if (hash == "#talent") {
 			// talent section
-			$("#talent-acs-target").load( "index.accessory.html #talent-acs" ); // load first
+			// $("#talent-acs-target").load( "index.accessory.html #talent-acs" ); // load first
  			$("#talent-target").toggleClass("show"); // then we show it
 		}
 	};
