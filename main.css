@@ -277,7 +277,7 @@ h2 span {color:rgba(255,255,255,0.3);}
 .flip-container, .front, .back {width:128px; height:128px;}
 .flipper {transition: 0.4s; -webkit-transform-style:preserve-3d; -moz-transform-style:preserve-3d; position: relative;}
 .front, .back {-webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; position:absolute; top: 0; left: 0; border-radius:128px; width:128px; height:128px; border:1px solid rgba(0,0,0,0.1) ; box-sizing:border-box; -moz-box-sizing:border-box; background-position: -1px -1px, center;}
-.front {/* z-index: 2; for firefox 31 */ -webkit-transform:rotateY(0deg); -moz-transform:rotateY(0deg); background-size:128px; background-image:url('https://graph.facebook.com/1029543326/picture?width=128&height=128');}
+.front {/* z-index: 2; for firefox 31 */ -webkit-transform:rotateY(0deg); -moz-transform:rotateY(0deg); background-size:128px; background-image:url('../images/face-today-240.jpg');}
 .back {-webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg); background-size:128px; background-image:url('../images/face-old-240.jpg');}
 /* magic */
 .flip-container.flip .flipper{-webkit-transform: rotateY(180deg); -moz-transform: rotateY(180deg);}
@@ -471,7 +471,7 @@ ul.bxslider {padding:0; margin:0;} /* was causing browser default bugs */
 	#hello {display:block; width:100%; padding:0;}
 	#face {margin:0 auto;}
 	.flip-container, .front, .back {border-radius:264px;  width:264px; height:264px; background-size:264px;}
-	#face .front {background-image:url('https://graph.facebook.com/1029543326/picture?width=264&height=264');}
+	#face .front {background-image:url('../images/face-today-480.jpg');}
 	#connect form {display:block; width:100%; padding:0;}
 	#connect input, textarea {width:100%;}
 	#connect button {width:100%;}
@@ -561,7 +561,7 @@ ul.bxslider {padding:0; margin:0;} /* was causing browser default bugs */
 	#dk-left.column-three {border-radius:232px; width:232px; height:232px; padding:0;  background-position:50% 50%;}
 	#c {padding-top:40px;}
 	.flip-container, .front, .back {border-radius:232px;  width:232px; height:232px; background-size:232px;}
-	#face .front {background-image:url('https://graph.facebook.com/1029543326/picture?width=232&height=232');}
+	#face .front {background-image:url('../images/face-today-240.jpg');}
 }
 @media screen and (device-aspect-ratio: 2/3) { /* iPhone < 5: */
 	#header-image {height:320px;}
