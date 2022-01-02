@@ -143,7 +143,7 @@ a.dribbble-d {color:#000;}
 #nav.nav-open .line-4 {-webkit-transform: rotate(-45deg); transform: rotate(-45deg); transition-delay: .12s;}
 
 /* header & title  */
-#header-image {background-color:#eee; height:440px; background-size:cover; background-position:50% 75%; position:relative; max-width:1440px; margin:0 auto;}
+#header-image {background-color:#eee; height:460px; background-size:cover; background-position:50% 75%; position:relative; max-width:1512px; margin:0 auto; transition: all 0.2s ease-in-out;}
 #copy {font-size:11px; color:rgba(255,255,255,0.3); position:absolute; right:8px; bottom:4px;}
 #copy a {border:none; color:rgba(255,255,255,0.3);}
 #copy a:hover {color:#fff;}
