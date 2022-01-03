@@ -58,21 +58,19 @@ $(document).ready(function() {
 	};
 	
 
+	// url has handling
 	// detect url hash change
 	var hash = window.location.hash; // setup hash on load
 	checkHash(); // now go check what to do
-	
 	window.onhashchange = locationHashChanged; // has url changed?
 	function locationHashChanged() {
 		hash = window.location.hash; // update hash
 		checkHash(); // now go check what to do
 	}
-	var currentCurrently = 0;
 	function checkHash(){ // when # = go do something
-		
 		if (hash == "#contact") {
 			// contact section
-			$("#name").focus();
+			document.getElementById("name").focus();
 		}
 	};
 	function clearHash(){
@@ -106,7 +104,6 @@ $(document).ready(function() {
 	// show/hide scroll to top button based on scroll speed & direction
 	var lastPos = null,
 	    timer = 0,
-	    movingUp = 0,
 	    delta = '',
 	    newPos = '';
 	function clear() {
@@ -206,13 +203,20 @@ $(document).ready(function() {
 
 
 	// face flip
-	$("#face").bind('touchstart mouseenter mouseleave', function(g) {
+	var face = document.getElementById("face");
+	// setup the events
+	face.addEventListener('mouseenter', faceFlip);
+	face.addEventListener('touchstart', faceFlip);
+	face.addEventListener('mouseleave', faceFlip);
+	// flip the damn thing
+	function faceFlip(g) {
+		console.log("hello");
 		g.stopPropagation();
 		g.preventDefault();
-		$('#face').toggleClass( "flip" );
-	});
+		face.classList.toggle('flip');
+	}
 
-
+	
 	// Let's make all dates dynamic because that's what they are
 	var BirthDay = 27,
 		BirthMonth = 10,
