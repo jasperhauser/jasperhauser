@@ -173,10 +173,10 @@ $(document).ready(function() {
 		MyAge = CurrYear-BirthYear-1;
 	if ((BirthMonth < CurrMonth) || ((BirthMonth == CurrMonth) && (BirthDay <= CurrDay))) { MyAge++; }
 	
-	$(window).bind('load', function displayAgeDates() {
+	window.onload = (event) => {
 	    document.getElementById("myage").innerHTML = MyAge;
 	    document.getElementById("this-year").innerHTML = CurrYear;
-	});
+	};
 
 	// used to have good placeholder text in the email form
 	// Released under MIT license: http://www.opensource.org/licenses/mit-license.php
