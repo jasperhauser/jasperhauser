@@ -665,12 +665,12 @@
 		</div>
 		<p>I&#x27;m a <span id="myage"></span> year old dad, husband, and Dutchman. Born, raised, and living in Amsterdam. Lived in Silicon Valley for 5 years. I love sharing knowledge and learning new things. I'm always open and interested to hear from you! Shoot me a message from right here.</p>
 	</div><!--
-	--><form id="contact" method="post" action="mailer.php" class="column-two">
+	--><form id="contact" action="https://formspree.io/f/mlezdpgl" method="POST" class="column-two">
 		<label for="first_name" id="first_name_label"><span>First Name</span><input type="text" id="first_name" name="first_name" placeholder="What's your first name?" novalidate></label><!-- honeypot spam trap -->
 		<label for="name"><span>Name</span><input type="text" id="name" name="name" placeholder="What's your name?" required></label><br>
-		<label for="email"><span>Email</span><input type="email" id="email" name="email" placeholder="Your e-mail address?" required></label><br> 
+		<label for="email"><span>Email</span><input type="email" id="email" name="_replyto" placeholder="Your e-mail address?" required></label><br> 
 		<label for="message"><span>Message</span><textarea id="message" name="message" rows="10" placeholder="What's up?" required></textarea></label>
-		<button type="submit">SEND<span class="loader"></span></button><div id="form-messages"></div>
+		<button type="submit">SEND</button>
 	</form>
 </section>
 

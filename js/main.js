@@ -229,50 +229,6 @@ $(document).ready(function() {
 	    document.getElementById("this-year").innerHTML = CurrYear;
 	});
 
-
-	// contact form
-	var form = $('#contact'); // Get the form
-	var formMessages = $('#form-messages'); // Get the messages div
-	$(form).submit(function(e) { // Set up an event listener for the contact form.
-		console.log("Send Mail");
-		e.preventDefault(); // Stop the browser from submitting the form.
-		$('.loader').addClass('show'); // Show progress
-		var formData = $(form).serialize(); // Serialize the form data.
-		// Submit the form using AJAX.
-		console.log("Sending Mail...");
-		$.ajax({
-			type: 'POST',
-			url: $(form).attr('action'),
-			data: formData
-		})
-		.done(function(data) {
-			$('.loader').removeClass('show'); // hide the loader
-			$(formMessages).addClass('show'); // adds padding = default hide
-			$(formMessages).text(data); // Set the message text.
-			console.log(data);
-			if (data === "Thank You! Mail was sent."){
-				console.log("Mail Sent, Reset Form");
-				// Clear the form
-				$('#name').val('');
-				$('#email').val('');
-				$('#message').val('');
-			}
-		})
-		// not sure if the following is even needed???
-		.fail(function(data) { // server side sending issues
-			console.log("Sending Message Failed");
-			// Make sure that the formMessages div has the 'error' class.
-			$('.loader').removeClass('show'); // hide the loader
-			$(formMessages).addClass('show');
-			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text("Oops! We couldn't send your message.");
-			}
-		});
-	});
-
 	// used to have good placeholder text in the email form
 	// Released under MIT license: http://www.opensource.org/licenses/mit-license.php
 	// See more at: http://www.syntacticsugr.com/23-javascript/sugr_cubes/112-detect-html5-placeholder-attribute-support#sthash.g81NfAk7.dpuf 
@@ -280,7 +236,7 @@ $(document).ready(function() {
 	if(!placeholderSupport){
 		//This browser does not support the placeholder attribute
 		//use javascript instead
-		console.log("issue 3");
+		// console.log("issue 3");
 		$('[placeholder]').focus(function() {
 			var input = $(this);
 			if (input.val() === input.attr('placeholder')) {
