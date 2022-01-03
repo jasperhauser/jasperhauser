@@ -1,11 +1,4 @@
 
-// todo:
-// • redo show classes with pure css!!!
-
-// why jquery
-// • event touch/click/scroll/resize/etc. handling
-// • async content loading
-
 $(document).ready(function() {
 
 	// global variable that defines mobile device width
@@ -55,26 +48,6 @@ $(document).ready(function() {
 		$('#nav').toggleClass( "nav-open" ); // nav has a special style for this state
 		$('#nav-backdrop').fadeToggle( "fast", "linear" ); // let's make this things smooth
 		$('body').toggleClass("noscroll"); // body should not be scrollable when menu is open
-	};
-	
-
-	// url has handling
-	// detect url hash change
-	var hash = window.location.hash; // setup hash on load
-	checkHash(); // now go check what to do
-	window.onhashchange = locationHashChanged; // has url changed?
-	function locationHashChanged() {
-		hash = window.location.hash; // update hash
-		checkHash(); // now go check what to do
-	}
-	function checkHash(){ // when # = go do something
-		if (hash == "#contact") {
-			// contact section
-			document.getElementById("name").focus();
-		}
-	};
-	function clearHash(){
-		history.pushState('', document.title, window.location.pathname); // clear the #hash
 	};
 
 	
@@ -147,37 +120,6 @@ $(document).ready(function() {
 		$(MoreButton).parent().toggleClass("show");
 	});
 
-
-	// face flip
-	var face = document.getElementById("face");
-	// setup the events
-	face.addEventListener('mouseenter', faceFlip);
-	face.addEventListener('touchstart', faceFlip);
-	face.addEventListener('mouseleave', faceFlip);
-	// flip the damn thing
-	function faceFlip(g) {
-		g.stopPropagation();
-		g.preventDefault();
-		face.classList.toggle('flip');
-	}
-
-
-	// Let's make all dates dynamic because that's what they are
-	var BirthDay = 27,
-		BirthMonth = 10,
-		BirthYear = 1980,
-		now = new Date(),
-		CurrDay = now.getDate(),
-		CurrMonth = now.getMonth()+1,
-		CurrYear = now.getFullYear(),
-		MyAge = CurrYear-BirthYear-1;
-	if ((BirthMonth < CurrMonth) || ((BirthMonth == CurrMonth) && (BirthDay <= CurrDay))) { MyAge++; }
-	
-	window.onload = (event) => {
-	    document.getElementById("myage").innerHTML = MyAge;
-	    document.getElementById("this-year").innerHTML = CurrYear;
-	};
-
     
     // *** Tools ***
 
@@ -224,3 +166,57 @@ $(document).ready(function() {
 		$('#hud').toggleClass("show");
 	});
 });
+
+
+// from here on down, vanilla JS, no jqeury no more
+
+
+// url has handling
+// detect url hash change
+var hash = window.location.hash; // setup hash on load
+checkHash(); // now go check what to do
+window.onhashchange = locationHashChanged; // has url changed?
+function locationHashChanged() {
+	hash = window.location.hash; // update hash
+	checkHash(); // now go check what to do
+}
+function checkHash(){ // when # = go do something
+	if (hash == "#contact") {
+		// contact section
+		document.getElementById("name").focus();
+	}
+};
+function clearHash(){
+	history.pushState('', document.title, window.location.pathname); // clear the #hash
+};
+
+
+// face flip
+var face = document.getElementById("face");
+// setup the events
+face.addEventListener('mouseenter', faceFlip);
+face.addEventListener('touchstart', faceFlip);
+face.addEventListener('mouseleave', faceFlip);
+// flip the damn thing
+function faceFlip(g) {
+	g.stopPropagation();
+	g.preventDefault();
+	face.classList.toggle('flip');
+}
+
+
+// Let's make all dates dynamic because that's what they are
+var BirthDay = 27,
+	BirthMonth = 10,
+	BirthYear = 1980,
+	now = new Date(),
+	CurrDay = now.getDate(),
+	CurrMonth = now.getMonth()+1,
+	CurrYear = now.getFullYear(),
+	MyAge = CurrYear-BirthYear-1;
+if ((BirthMonth < CurrMonth) || ((BirthMonth == CurrMonth) && (BirthDay <= CurrDay))) { MyAge++; }
+
+window.onload = (event) => {
+	document.getElementById("myage").innerHTML = MyAge;
+	document.getElementById("this-year").innerHTML = CurrYear;
+};
