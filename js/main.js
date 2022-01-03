@@ -178,36 +178,6 @@ $(document).ready(function() {
 	    document.getElementById("this-year").innerHTML = CurrYear;
 	};
 
-	// used to have good placeholder text in the email form
-	// Released under MIT license: http://www.opensource.org/licenses/mit-license.php
-	// See more at: http://www.syntacticsugr.com/23-javascript/sugr_cubes/112-detect-html5-placeholder-attribute-support#sthash.g81NfAk7.dpuf 
-	placeholderSupport = ("placeholder" in document.createElement("input"));
-	if(!placeholderSupport){
-		//This browser does not support the placeholder attribute
-		//use javascript instead
-		// console.log("issue 3");
-		$('[placeholder]').focus(function() {
-			var input = $(this);
-			if (input.val() === input.attr('placeholder')) {
-				input.val('');
-				input.removeClass('placeholder');
-		}
-		}).blur(function() {
-			var input = $(this);
-			if (input.val() === '' || input.val() === input.attr('placeholder')) {
-				input.addClass('placeholder');
-				input.val(input.attr('placeholder'));
-		}
-		}).blur().parents('form').submit(function() {
-			$(this).find('[placeholder]').each(function() {
-				var input = $(this);
-				if (input.val() === input.attr('placeholder')) {
-					input.val('');
-				}
-			})
-		});
-	}
-
     
     // *** Tools ***
 
