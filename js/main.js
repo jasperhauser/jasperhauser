@@ -169,13 +169,12 @@ $(document).ready(function() {
 	face.addEventListener('mouseleave', faceFlip);
 	// flip the damn thing
 	function faceFlip(g) {
-		console.log("hello");
 		g.stopPropagation();
 		g.preventDefault();
 		face.classList.toggle('flip');
 	}
 
-	
+
 	// Let's make all dates dynamic because that's what they are
 	var BirthDay = 27,
 		BirthMonth = 10,
