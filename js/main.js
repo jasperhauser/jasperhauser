@@ -137,19 +137,6 @@ $(document).ready(function() {
 		$('#scroll-top').removeClass("show");
 	});
 
-	
-	// show hide update/availability div
-	// http://stackoverflow.com/questions/13121448/show-hide-divs-based-on-date
-	window.setInterval(function(){
-		var current = new Date();
-		// var updateStartDate  = new Date("November 18, 2016 15:46:00"); // test values
-		var updateStartDate  = new Date("November 21, 2016 12:00:00");
-		var updateEndDate = new Date("January 31, 2017 12:00:00");
-		if (current.getTime() > updateStartDate.getTime() &&  current.getTime() < updateEndDate.getTime()){
-			$('#update').css({"display":"block"});
-			// console.log("it's ok");
-		}
-	}, 1000); // checks every 0.1 seconds, neat to see switch live on page
 
 	// icon grid truncation
 	$(".more-btn").bind('touchstart mousedown', function(f) {
