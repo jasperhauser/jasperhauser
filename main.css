@@ -32,7 +32,7 @@ button:disabled:hover {border-color:#ccc;}
 
 /* text columns */
 .column-one-text {margin:20px 15% 60px 15%;}
-.column-one-text.note {font-style: italic; color:#777; text-align:center;}
+.note {font-style: italic; color:rgb(66, 66, 66); text-align:center;}
 .column-two-text {-webkit-column-count:2; -webkit-column-gap: 40px; -moz-column-count:2; -moz-column-gap: 40px;}
 
 /* layout columns */
@@ -212,7 +212,6 @@ ul.mt-year {padding: 0; margin: 0; list-style: none; display: -webkit-box; displ
 /* intro */
 #currently {padding-top:40px;}
 #currently h4 {margin-bottom:30px;}
-#currently h4 a {color:#aaa;}
 #currently h4 a:hover {color:#000; border-bottom:1px solid #999;}
 
 #currently .column-three {box-sizing: border-box; padding-right: 30px;}
@@ -279,7 +278,7 @@ h4 span {color:rgb(92, 92, 92);}
 button:hover .loader {border-top: 3px solid #fff; border-right: 3px solid rgba(255, 255, 255, 0.4); border-bottom: 3px solid rgba(255, 255, 255, 0.4); border-left: 3px solid rgba(255, 255, 255, 0.4);}
 
 /* footer */
-footer {background-color:#eee; margin-top:40px; padding:20px 0; font-size:14px; color:#999; line-height:1.8em; text-align:center;}
+footer {background-color:#eee; margin-top:40px; padding:20px 0; font-size:14px; color:rgb(90, 90, 90); line-height:1.8em; text-align:center;}
 
 /* scroll top */
 #scroll-top {display:none; width:40px; height:40px; background-color:rgba(255,255,255,0.9); border-radius:20px; position:fixed; bottom:16px; right:16px; text-align:center; border:none; box-shadow:0px 0px 3px rgba(0,0,0,0.3); transition:box-shadow 0.2s;}
