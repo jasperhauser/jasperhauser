@@ -8,4 +8,4 @@ Disallow: /fonts/
 User-agent: spambot
 disallow: /
 
-sitemap:www.jasperhauser.nl/sitemap.xml
+Sitemap: https://www.jasperhauser.nl/sitemap.xml
