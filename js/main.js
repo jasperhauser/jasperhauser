@@ -73,10 +73,6 @@ $(document).ready(function() {
 		if (hash == "#contact") {
 			// contact section
 			$("#name").focus();
-		} else if (hash == "#talent") {
-			// talent section
-			// $("#talent-acs-target").load( "index.accessory.html #talent-acs" ); // load first
- 			$("#talent-target").toggleClass("show"); // then we show it
 		}
 	};
 	function clearHash(){
@@ -157,38 +153,6 @@ $(document).ready(function() {
 			// console.log("it's ok");
 		}
 	}, 1000); // checks every 0.1 seconds, neat to see switch live on page
-
-
-	// talent expand/collapse
-	$("#talent-link").bind('touchstart mousedown', function(e) {
-		currentCurrently = window.pageYOffset; // let's set last scroll location before we move so we can restore
-	});
-	$("#talent-close").bind('touchstart mousedown', function(e) {
-		e.stopPropagation();
-		e.preventDefault();
- 		if (window.innerWidth <= mobileWidth && currentCurrently > 0) {
- 			$('html, body').animate({scrollTop:currentCurrently}, 500); // and scroll back to our previsou location
- 		} else if (currentCurrently == 0){ // when #talent loaded through .html#talent
- 			var talentLink = $("#talent-link").offset().top;
- 			$('html, body').animate({scrollTop:talentLink}, 500);
- 		}
- 		$('#talent-target').toggleClass("show"); // let's hide it again
-		clearHash();
-	});
-	// show/hide floating talent close button
-	if (window.innerWidth <= mobileWidth) {
-		var talentTop = $('#talent').offset().top - $(window).scrollTop(); // only need to know once onload
-		$(window).bind('scroll', function floatingClose(){ // on scroll
-			var talentBottom = talentTop + $('#talent').outerHeight(); // need it within scroll to capture height after content loaded
-			if (talentTop - nav_height <= window.scrollY && talentBottom - nav_height - $('#talent-close').outerHeight() - 16 > window.scrollY) { // bit of a tricky selector with all the different object sizes
-				$('#talent-close').addClass("float");
-			}
-			else {
-				$('#talent-close').removeClass("float");
-			}
-		});
-	}
-
 
 	// icon grid truncation
 	$(".more-btn").bind('touchstart mousedown', function(f) {
