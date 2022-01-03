@@ -161,47 +161,6 @@ $(document).ready(function() {
 	});
 
 
-	// device orientation parallax effect for header & dk circle
-	// todo: set intitial values as base = 0, makes it less jumpy
-	var deviceAlpha = 0;
-	var deviceBeta = 0;
-	var deviceGamma = 0;
-	if (window.innerWidth <= mobileWidth && window.DeviceOrientationEvent) { // mobile devive with giro
-		window.addEventListener('deviceorientation', deviceOrientationHandler, true);
-			// console.log("on mobile with giro");
-		
-		// when deviceorientation changes
-		function deviceOrientationHandler(evt) {
-    		var deviceOrientationData = evt;
-			deviceAlpha = evt.alpha;
-			deviceBeta = evt.beta;
-				// beta range: 0 plat, 90 rechtop
-			deviceGamma = evt.gamma;
-				// gamma range: -90 links > 90 rechts
-
-			if (deviceBeta <= 80) { // kijkt neer, draaien met pols
-				// console.log("looking down in your hand");
-				var tiltratio = deviceGamma * 0.35; // used to slow the motion
-			} else if (deviceBeta > 80) { // recht op, draaien om je heen
-				// console.log("looking up around you");
-				var tiltratio = deviceAlpha * 0.35; // used to slow the motion
-			}
-
-			var tiltcalc = 50 + tiltratio;
-			// 50 = % centers image
-			// 90 degrees gamma = 81,5%, when tilted on side
-			// 180 degrees gamma = 113%, when upside down
-			
-			// gamma glitches when beta is 90 degrees
-			// when beta is ~90 it makes sense to start using alpha as rotation signal
-			
-			$('.parallax').each(function(i, obj) {
-				obj.style["background-position"] = tiltcalc + "%" + " center";
-			});
-		}
-	} // else console.log("on desktop"); // not firing in Chrome?
-
-
 	// face flip
 	var face = document.getElementById("face");
 	// setup the events
@@ -301,9 +260,6 @@ $(document).ready(function() {
 		var myWidth = window.innerWidth,
 			myHeight = window.innerHeight;
 		$("#hud-info").text(myWidth + " px" + " / " + myHeight + " px" + " : " + "@" + myRatio);
-		if (window.DeviceOrientationEvent){ // only show when available
-	    	$("#hud-info").append(" : G" + Math.round(deviceGamma));
-	    }
 		if (lastPos != null){ // need some speed first
 	        $("#hud-info").append(" : V" + delta); // - is going up, + is going down
 	    }
