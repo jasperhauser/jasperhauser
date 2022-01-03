@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 	// header copyrights <3 my friends
 	$("#header-image").append('<div id="copy"></div>');
-	$(".brown > #copy").append('Photo: <a target="_blank" href="http://jtaby.com">Majd Taby</a>');
+	$(".brown > #copy").append('Photo: <a target="_blank" href="http://jtaby.com" rel="noreferrer">Majd Taby</a>');
 
 
 	// show/hide scroll to top button based on scroll speed & direction
