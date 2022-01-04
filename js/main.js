@@ -1,19 +1,3 @@
-// jquery, working to remove it
-$(document).ready(function() {
-	// http://bxslider.com goodness
-	$('.bxslider').bxSlider({
-		auto:true,
-		tickerHover:true, // only works with css turned off :(
-		// useCSS:true,
-		stopAutoOnClick:true,
-		controls:true,
-		keyboardEnabled:true,
-		captions:true
-	});
-});
-
-
-// from here on down, vanilla JS, no jqeury no more
 
 // show/hide scroll to top button based on scroll speed & direction
 var lastPos = null,
