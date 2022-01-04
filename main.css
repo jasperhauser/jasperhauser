@@ -482,7 +482,7 @@ ul.bxslider {padding:0; margin:0;} /* was causing browser default bugs */
 	#nav.nav-open #nav-sections {display:block;}
 	#nav.nav-open #nav-options {display:block;} /* after touch let's show stuff */
 	#nav.nav-open div.content {position:fixed; height:100%; width:100%; padding:0; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d;}
-	#nav-options {display:none; width:100%; text-align:center; padding:0; position:absolute; top:55%; -webkit-transform:translateY(-50%); transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%);}
+	#nav-options {display:none; width:100%; text-align:center; padding:0; position:absolute; top:55%; transform:translateY(-50%);}
 	#social {display:block; width:280px; margin:0 auto;}
 	#social a {display:inline-block; padding:0px; width:32px; height:32px; margin:18px 20px; font-size:32px;}
 		#social a:hover {background-color:rgba(0,0,0,0); border-bottom:none;}
