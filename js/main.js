@@ -1,12 +1,10 @@
-
+// jquery, working to remove it
 $(document).ready(function() {
 
 	// scroll back up when you tap "empty" part of the nav bar
 	document.getElementById("click-bar").onclick = function(){
 		$('html,body').animate({scrollTop: 0}, 500);
 	};
-    
-    // *** Tools ***
 
 	// http://bxslider.com goodness
 	$('.bxslider').bxSlider({
@@ -18,23 +16,6 @@ $(document).ready(function() {
 		keyboardEnabled:true,
 		captions:true
 	});
-
-   	
-	// smoothly scroll anchor links on page
-	// origin: http://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
-	var $root = $('html, body');
-	$('a').click(function() {
-	    var href = $.attr(this, 'href');
-	    var hrefPositionCompensated = Number($(href).offset().top) - Number(nav_height); // ensure #nav bar won't hide content
-	    $root.animate({
-	        scrollTop: hrefPositionCompensated
-	        // scrollTop: $(href).offset().top // was the original code
-	    }, 500, function () {
-	        window.location.hash = href;
-	    });
-	    return false;
-	});
-
 });
 
 
@@ -162,13 +143,13 @@ function clearHash(){
 // face flip
 var face = document.getElementById("face");
 // setup the events
-face.addEventListener('mouseenter', faceFlip);
 face.addEventListener('touchstart', faceFlip);
+face.addEventListener('mouseenter', faceFlip);
 face.addEventListener('mouseleave', faceFlip);
 // flip the damn thing
 function faceFlip(g) {
-	g.stopPropagation();
-	g.preventDefault();
+	// g.stopPropagation();
+	// g.preventDefault();
 	face.classList.toggle('flip');
 }
 
