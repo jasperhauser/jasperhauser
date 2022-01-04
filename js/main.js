@@ -11,7 +11,6 @@ $(document).ready(function() {
 			e.stopPropagation();
 			e.preventDefault();
 			$('#name').focus();
-			console.log("issue 1");
 			setbackdrop();
 		}
 	});
@@ -48,7 +47,6 @@ $(document).ready(function() {
 	$('#click-bar').css({"height":"50px", "width":"100%", "position":"absolute", "margin":"0 -16px 0 -16px"});
 	$("#click-bar").bind('touchstart click', function() {
 		$('html,body').animate({scrollTop: 0}, 500);
-		// console.log("clicked on bar");
 	});
 
 
