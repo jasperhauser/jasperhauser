@@ -89,7 +89,8 @@ a.dribbble-d {color:#000;}
 #nav-shadow {display:none;}
 
 /* mobile menu open */
-#nav-backdrop {display:none; background-color:#000; z-index:1; width:100%; height:100%; opacity:0.85;  position:fixed; top:0;}
+#nav-backdrop {display:none; background-color:#000; z-index:1; width:100%; height:100%; opacity:0;  position:fixed; top:0;}
+#nav-backdrop.show {display: block; opacity:0.85;}
 #nav.nav-open.white a, #nav.nav-open.white #logo {color:#fff;}
 
 #nav.nav-open.white #hamburger span {background-color:#fff;}
@@ -479,7 +480,6 @@ ul.bxslider {padding:0; margin:0;} /* was causing browser default bugs */
 	#hamburger {display:block;}
 	#nav.nav-open #nav-sections {display:block;}
 	#nav.nav-open #nav-options {display:block;} /* after touch let's show stuff */
-	#nav-backdrop.nb-open {display:block;}
 	#nav.nav-open div.content {position:fixed; height:100%; width:100%; padding:0; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d;}
 	#nav-options {display:none; width:100%; text-align:center; padding:0; position:absolute; top:55%; -webkit-transform:translateY(-50%); transform:translateY(-50%); -moz-transform:translateY(-50%); transform:translateY(-50%);}
 	#social {display:block; width:280px; margin:0 auto;}

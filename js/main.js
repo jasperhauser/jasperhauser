@@ -1,38 +1,6 @@
 
 $(document).ready(function() {
 
-	// global variable that defines mobile device width
-	var mobileWidth = 480;
-
-	// mail me link/button behaviour
-	$("#mail-me").bind('touchstart click', function(e) {
-		// var windowWidth = window.innerWidth;
-		if (window.innerWidth <= mobileWidth) { // mobile, hardcoded in CSS
-			e.stopPropagation();
-			e.preventDefault();
-			$('#name').focus();
-			setbackdrop();
-		}
-	});
-	// open and close the mobile menu
-	$("#hamburger").bind('touchstart click', function(e) {
-		e.stopPropagation();
-		e.preventDefault();
-		setbackdrop();
-	});
-	// section links on mobile
-	$(".nav-link").bind('click', function() {
-		setbackdrop();
-	});
-
-	// usefull tool to have lying around
-	function setbackdrop(e){ // tool for mail-me & hamburger control
-		$('#nav').toggleClass( "nav-open" ); // nav has a special style for this state
-		$('#nav-backdrop').fadeToggle( "fast", "linear" ); // let's make this things smooth
-		$('body').toggleClass("noscroll"); // body should not be scrollable when menu is open
-	};
-
-	
 	// nav scroll progress bar
 	$("#nav-bar").prepend('<div id="nav-progressbar"></div>'); // this one first so it's below #click-bar
 	$('#nav-progressbar').css({"height":"100%", "position":"absolute", "top":"0px", "left":"0px", "background-color":"rgba(0,0,0,0.05)"}); // setup styling
@@ -145,6 +113,35 @@ $(document).ready(function() {
 
 
 // from here on down, vanilla JS, no jqeury no more
+
+
+// mail me link/button behaviour
+var mobileWidth = 480;
+document.getElementById("mail-me").onclick = function(e){
+	if (window.innerWidth <= mobileWidth) { // mobile, hardcoded in CSS
+		e.stopPropagation();
+		e.preventDefault();
+		document.getElementById("name").focus();
+		setbackdrop();
+	}
+};
+// open and close the mobile menu
+document.getElementById("hamburger").onclick = function(e){
+	e.stopPropagation();
+	e.preventDefault();
+	setbackdrop();
+};
+// section links on mobile
+document.getElementsByClassName("nav-link").onclick = function(){
+	setbackdrop();
+};
+
+// usefull tool to have lying around
+function setbackdrop(e){ // tool for mail-me & hamburger control
+	document.getElementById("nav").classList.toggle('nav-open'); // nav has a special style for this state
+	document.getElementById("nav-backdrop").classList.toggle('show'); // let's make this things smooth		
+	document.body.classList.toggle('noscroll'); // body should not be scrollable when menu is open
+};
 
 
 // nav menu style change
