@@ -82,7 +82,7 @@ a.dribbble-d {color:#000;}
 #nav {z-index:2; position:fixed; top:0; width:100%; transition:top 0.4s ease; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -webkit-animation: navfadein 0.6s; animation: navfadein 0.6s;}
 @keyframes navfadein {from {opacity:0;} to {opacity:1;}}
 
-#nav-bar {background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.35)), color-stop(75%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0))); background:-moz-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0)100%); transition:background-color 0.4s; max-width:1440px; margin:0 auto;}
+#nav-bar {background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.35)), color-stop(75%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0))); background:-moz-linear-gradient(top, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0)100%); transition:background-color 0.2s; max-width:1512px; margin:0 auto;}
 	#nav.white #nav-bar {max-width:none;}
 #nav-bar:hover {background-color:rgba(0,0,0,0.1);}
 #nav .content {height:50px; position:relative;}
