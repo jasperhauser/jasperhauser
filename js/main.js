@@ -41,17 +41,6 @@ $(document).ready(function() {
 	$('#scroll-top').click(function() {
 		$('#scroll-top').removeClass("show");
 	});
-
-
-	// icon grid truncation
-	$(".more-btn").bind('touchstart mousedown', function(f) {
-		f.stopPropagation();
-		f.preventDefault();
- 		var MoreButton = this;
-		$(MoreButton).toggle();
-		$(MoreButton).parent().toggleClass("show");
-	});
-
     
     // *** Tools ***
 

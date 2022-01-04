@@ -73,9 +73,6 @@ a.dribbble-d {color:#000;}
 .grid-3 div.article span.dark {color:#000;}
 .grid-3 div.article span.dark small {color:#fff; font-size:0.6em;}
 
-/* show more */
-.grid-3 div.more-btn {display:none; border-bottom:1px solid #ddd; padding:28px; color:#000; font-size:14px; text-transform:uppercase; text-align:center;}
-
 /* ========================== */
 
 /* nav basics*/
@@ -521,7 +518,6 @@ ul.bxslider {padding:0; margin:0;} /* was causing browser default bugs */
 	.grid-3 div {display:block; width:100%;}
 	.grid-3 div.m-hide, .m-hide {display:none;}
 	.show div.m-hide {display:block;}
-	.grid-3 div.more-btn {display:block;}
 
 	/* content */
 	#header-image {height:330px; background-position:50% 50%;}
