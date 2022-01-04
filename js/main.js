@@ -5,42 +5,6 @@ $(document).ready(function() {
 	document.getElementById("click-bar").onclick = function(){
 		$('html,body').animate({scrollTop: 0}, 500);
 	};
-
-	// show/hide scroll to top button based on scroll speed & direction
-	var lastPos = null,
-	    timer = 0,
-	    delta = '',
-	    newPos = '';
-	function clear() {
-	    lastPos = null;
-	};
-
-	$(window).bind('scroll resize', function checkScrollSpeed(){
-		var topScrollTrigger = window.innerHeight * 0.5; // nearing the top
-		var bottomScrollTrigger = $(document).height() - (window.innerHeight * 1.75); // nearing the bottom
-		var newPos = window.scrollY;
-
-		if (lastPos != null){
-	        delta = newPos - lastPos;
-	    }
-		// scroll top show
-	    if (delta < 0 && window.pageYOffset > topScrollTrigger || bottomScrollTrigger <= window.pageYOffset){
-	    	$('#scroll-top').addClass("show");
-	    }
-	    // scroll top hide
-	   	if (bottomScrollTrigger > window.pageYOffset && delta > 0 || window.pageYOffset <= topScrollTrigger){
-	    	$('#scroll-top').removeClass("show");
-	    }
-
-	    lastPos = newPos;
-	    timer && clearTimeout(timer);
-	    timer = setTimeout(clear, 100);
-	});
-
-	// scroll button state
-	$('#scroll-top').click(function() {
-		$('#scroll-top').removeClass("show");
-	});
     
     // *** Tools ***
 
@@ -70,10 +34,51 @@ $(document).ready(function() {
 	    });
 	    return false;
 	});
+
 });
 
 
 // from here on down, vanilla JS, no jqeury no more
+
+// show/hide scroll to top button based on scroll speed & direction
+var lastPos = null,
+timer = 0,
+delta = '',
+newPos = '';
+function clear() {
+lastPos = null;
+};
+
+window.addEventListener('resize', checkScrollSpeed);
+window.addEventListener('scroll', checkScrollSpeed);
+
+function checkScrollSpeed(){
+var topScrollTrigger = window.innerHeight * 0.5; // nearing the top
+var bottomScrollTrigger = document.body.clientHeight - (window.innerHeight * 1.75); // nearing the bottom
+var newPos = window.scrollY;
+
+if (lastPos != null){
+	delta = newPos - lastPos;
+}
+// scroll top show
+if (delta < 0 && window.pageYOffset > topScrollTrigger || bottomScrollTrigger <= window.pageYOffset){
+	document.getElementById('scroll-top').classList.add('show');
+}
+// scroll top hide
+   if (bottomScrollTrigger > window.pageYOffset && delta > 0 || window.pageYOffset <= topScrollTrigger){
+	document.getElementById('scroll-top').classList.remove('show');
+}
+
+lastPos = newPos;
+timer && clearTimeout(timer);
+timer = setTimeout(clear, 100);
+}
+
+// scroll button state
+document.getElementById("scroll-top").onclick = function(){
+document.getElementById("scroll-top").classList.toggle('show');
+}
+
 
 // mail me link/button behaviour
 var mobileWidth = 480;
@@ -130,7 +135,7 @@ window.addEventListener('resize', navBarProgress);
 window.addEventListener('scroll', navBarProgress);
 
 function navBarProgress(){
-	var navProgress =  window.scrollY / ($(document).height() - $(window).height()); // how far are we?
+	var navProgress =  window.scrollY / (document.body.clientHeight - window.innerHeight); // how far are we?
 	var navProgressWidth = (100 * navProgress.toFixed(3)) + "%"; // round a bit
 	document.getElementById("nav-progressbar").style.width = navProgressWidth; // apply all the math in CSS
 }
