@@ -1,11 +1,5 @@
 // jquery, working to remove it
 $(document).ready(function() {
-
-	// scroll back up when you tap "empty" part of the nav bar
-	document.getElementById("click-bar").onclick = function(){
-		$('html,body').animate({scrollTop: 0}, 500);
-	};
-
 	// http://bxslider.com goodness
 	$('.bxslider').bxSlider({
 		auto:true,
