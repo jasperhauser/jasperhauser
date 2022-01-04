@@ -88,6 +88,10 @@ a.dribbble-d {color:#000;}
 #nav .content {height:50px; position:relative;}
 #nav-shadow {display:none;}
 
+/* nav bar tools */
+#nav-progressbar {height: 100%; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.05);}
+#click-bar {height: 100%; width:100%; position: absolute; margin: 0 -16px 0 -16px;}
+
 /* mobile menu open */
 #nav-backdrop {display:none; background-color:#000; z-index:1; width:100%; height:100%; opacity:0;  position:fixed; top:0;}
 #nav-backdrop.show {display: block; opacity:0.85;}

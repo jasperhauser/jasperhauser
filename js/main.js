@@ -1,22 +1,10 @@
 
 $(document).ready(function() {
 
-	// nav scroll progress bar
-	$("#nav-bar").prepend('<div id="nav-progressbar"></div>'); // this one first so it's below #click-bar
-	$('#nav-progressbar').css({"height":"100%", "position":"absolute", "top":"0px", "left":"0px", "background-color":"rgba(0,0,0,0.05)"}); // setup styling
-	$(window).bind('scroll resize', function navBarProgress(){
-		var navProgress =  window.scrollY / ($(document).height() - $(window).height()); // how far are we?
-		var navProgressWidth = (100 * navProgress.toFixed(3)) + "%"; // round a bit
-		$('#nav-progressbar').css({"width": navProgressWidth}); // apply all the math in CSS
-	});
-
 	// scroll back up when you tap "empty" part of the nav bar
-	$("#nav-bar > div.content").prepend('<div id="click-bar"></div>'); // should ontop of progressbar
-	$('#click-bar').css({"height":"50px", "width":"100%", "position":"absolute", "margin":"0 -16px 0 -16px"});
-	$("#click-bar").bind('touchstart click', function() {
+	document.getElementById("click-bar").onclick = function(){
 		$('html,body').animate({scrollTop: 0}, 500);
-	});
-
+	};
 
 	// show/hide scroll to top button based on scroll speed & direction
 	var lastPos = null,
@@ -93,27 +81,10 @@ $(document).ready(function() {
 	    });
 	    return false;
 	});
-
-
-	// device & window info HUD
-	$(document.body).append('<div id="hud" style=""><span id="hud-toggle"></span><span id="hud-info"></span></div>');
-	var myRatio = window.devicePixelRatio;
-	$(window).bind('load resize scroll deviceorientation', function displayWindowSize() {
-		var myWidth = window.innerWidth,
-			myHeight = window.innerHeight;
-		$("#hud-info").text(myWidth + " px" + " / " + myHeight + " px" + " : " + "@" + myRatio);
-		if (lastPos != null){ // need some speed first
-	        $("#hud-info").append(" : V" + delta); // - is going up, + is going down
-	    }
-	});
-	$('#hud-toggle').click(function() {
-		$('#hud').toggleClass("show");
-	});
 });
 
 
 // from here on down, vanilla JS, no jqeury no more
-
 
 // mail me link/button behaviour
 var mobileWidth = 480;
@@ -125,12 +96,14 @@ document.getElementById("mail-me").onclick = function(e){
 		setbackdrop();
 	}
 };
+
 // open and close the mobile menu
 document.getElementById("hamburger").onclick = function(e){
 	e.stopPropagation();
 	e.preventDefault();
 	setbackdrop();
 };
+
 // section links on mobile
 document.getElementsByClassName("nav-link").onclick = function(){
 	setbackdrop();
@@ -139,10 +112,9 @@ document.getElementsByClassName("nav-link").onclick = function(){
 // usefull tool to have lying around
 function setbackdrop(e){ // tool for mail-me & hamburger control
 	document.getElementById("nav").classList.toggle('nav-open'); // nav has a special style for this state
-	document.getElementById("nav-backdrop").classList.toggle('show'); // let's make this things smooth		
+	document.getElementById("nav-backdrop").classList.toggle('show'); // let's make this things smooth
 	document.body.classList.toggle('noscroll'); // body should not be scrollable when menu is open
 };
-
 
 // nav menu style change
 var header_image = document.getElementById('header-image');
@@ -151,7 +123,7 @@ var nav = document.getElementById('nav');
 var nav_height = getComputedStyle(nav).height.split('px')[0];
 var switch_point = header_image_height - nav_height;
 
-window.addEventListener('onload', navSwitch);
+window.addEventListener('load', navSwitch);
 window.addEventListener('resize', navSwitch);
 window.addEventListener('scroll', navSwitch);
 
@@ -164,6 +136,15 @@ function navSwitch(){
 	}
 }
 
+// nav scroll progress bar
+window.addEventListener('resize', navBarProgress);
+window.addEventListener('scroll', navBarProgress);
+
+function navBarProgress(){
+	var navProgress =  window.scrollY / ($(document).height() - $(window).height()); // how far are we?
+	var navProgressWidth = (100 * navProgress.toFixed(3)) + "%"; // round a bit
+	document.getElementById("nav-progressbar").style.width = navProgressWidth; // apply all the math in CSS
+}
 
 // url has handling
 // detect url hash change
@@ -179,11 +160,10 @@ function checkHash(){ // when # = go do something
 		// contact section
 		document.getElementById("name").focus();
 	}
-};
+}
 function clearHash(){
 	history.pushState('', document.title, window.location.pathname); // clear the #hash
-};
-
+}
 
 // face flip
 var face = document.getElementById("face");
@@ -197,7 +177,6 @@ function faceFlip(g) {
 	g.preventDefault();
 	face.classList.toggle('flip');
 }
-
 
 // Let's make all dates dynamic because that's what they are
 var BirthDay = 27,
@@ -213,4 +192,26 @@ if ((BirthMonth < CurrMonth) || ((BirthMonth == CurrMonth) && (BirthDay <= CurrD
 window.onload = (event) => {
 	document.getElementById("myage").innerHTML = MyAge;
 	document.getElementById("this-year").innerHTML = CurrYear;
-};
+}
+
+// ### Tools ###
+
+// device & window info HUD
+document.body.insertAdjacentHTML('beforeend', '<div id="hud" style=""><span id="hud-toggle"></span><span id="hud-info"></span></div>');
+var myRatio = window.devicePixelRatio;
+
+window.addEventListener('load', displayWindowSize);
+window.addEventListener('resize', displayWindowSize);
+window.addEventListener('scroll', displayWindowSize);
+
+function displayWindowSize() {
+	var myWidth = window.innerWidth,
+		myHeight = window.innerHeight;
+	document.getElementById('hud-info').textContent = myWidth + " px" + " / " + myHeight + " px" + " : " + "@" + myRatio;
+	if (lastPos != null){ // need some speed first
+		document.getElementById('hud-info').append(" : V" + delta); // - is going up, + is going down
+	}
+}
+document.getElementById("hud-toggle").onclick = function(){
+	document.getElementById("hud").classList.toggle("show");
+}
