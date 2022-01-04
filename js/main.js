@@ -4,23 +4,6 @@ $(document).ready(function() {
 	// global variable that defines mobile device width
 	var mobileWidth = 480;
 
-	// nav menu style change
-	var header_image = document.getElementById('header-image');
-	var header_image_height = getComputedStyle(header_image).height.split('px')[0];
-	var nav = document.getElementById('nav');
-	var nav_height = getComputedStyle(nav).height.split('px')[0];
-	var switch_point = header_image_height - nav_height;
-	
-	$(window).bind('load scroll resize', function navStyle(e) {
-		if( window.pageYOffset > switch_point) {
-			document.getElementById("nav").classList.add("white");
-		}
-		if( window.pageYOffset < switch_point) {
-			document.getElementById("nav").classList.remove("white");
-		}
-	});
-
-
 	// mail me link/button behaviour
 	$("#mail-me").bind('touchstart click', function(e) {
 		// var windowWidth = window.innerWidth;
@@ -169,6 +152,27 @@ $(document).ready(function() {
 
 
 // from here on down, vanilla JS, no jqeury no more
+
+
+// nav menu style change
+var header_image = document.getElementById('header-image');
+var header_image_height = getComputedStyle(header_image).height.split('px')[0];
+var nav = document.getElementById('nav');
+var nav_height = getComputedStyle(nav).height.split('px')[0];
+var switch_point = header_image_height - nav_height;
+
+window.addEventListener('onload', navSwitch);
+window.addEventListener('resize', navSwitch);
+window.addEventListener('scroll', navSwitch);
+
+function navSwitch(){
+	if( window.pageYOffset > switch_point) {
+		document.getElementById("nav").classList.add("white");
+	}
+	if( window.pageYOffset < switch_point) {
+		document.getElementById("nav").classList.remove("white");
+	}
+}
 
 
 // url has handling
