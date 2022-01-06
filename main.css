@@ -5,8 +5,8 @@ body {margin:0; padding:0; font-family: "ff-scala-sans-web", Helvetica, sans-ser
 h1, h2 {font-family: "ff-scala-web", Georgia, sans-serif;}
 h2, h3, h4 {font-style:normal; line-height:1.6em; margin:0;}
 h1 {font-size:2.2em; padding:0 16px; text-align:center;} /* 2em */
-	h1 a {border-bottom:1px solid #ddd; transition:border-bottom 0.2s;}
-	h1 a:hover {border-bottom:1px solid #000;}
+	h2 a, h4 a {border-bottom:1px solid #ddd; transition:border-bottom 0.2s;}
+	h2 a:hover, h4 a:hover {border-bottom:1px solid #000;}
 h2 {font-size:2em; font-weight:normal; color:#555; margin:16px 0 -8px 0; text-align:center;} /* 1.5em */
 h3 {font-size:1.6em; margin-top:8px; color:#555; font-weight:normal;} /* 1.17em */
 h4 {font-size:1.2em; font-weight:normal; color:#555; margin:16px 0 -8px 0; text-align: center;} /* 1.5em */
