@@ -301,8 +301,20 @@ footer div {max-width: 720px !important;}
 	#hud.show #hud-toggle:before {content:"\00d7";} /* × hide */
 
 
-
 /* ========================== */
+
+/* Glide */
+.glide img {max-width: 100%;}
+.glide:hover .glide__arrows button {display: block;}
+.glide__arrows button {display:none; position:absolute; height:42px; width:42px; text-indent:-9999px; background-color:rgba(51, 51, 51, 0.5); transition:background-color 0.2s; z-index: unset; padding: 0; box-sizing: border-box; border: none; border-radius: none; box-shadow: none;}
+.glide__arrows button:hover {background-color:rgba(51, 51, 51, 0.75);}
+.glide .glide__arrow--left {cursor:w-resize; left: 10px;}
+.glide .glide__arrow--right {cursor:e-resize; right: 10px;}
+button.glide__arrow--right:after {display:block; content: ""; position:absolute; width:16px; height:27px;top:50%; margin-top:-14px; right:13px; background: url("images/arrow-right.svg");}
+button.glide__arrow--left:after {display:block; content: ""; position:absolute; width:16px; height:27px;top:50%; margin-top:-14px; right:13px; background: url("images/arrow-left.svg");}
+.glide .glide__bullets {bottom:20px; z-index: unset;}
+.glide .glide__bullet {transition: all 0.2s ease-in-out;}
+
 
 /* https://icomoon.io/app/#/select */
 @font-face {font-family: 'jh-glyphs'; src:url('/fonts/jh-glyphs.eot?p64v8s'); src:url('/fonts/jh-glyphs.eot?#iefixp64v8s') format('embedded-opentype'), url('/fonts/jh-glyphs.woff?p64v8s') format('woff'), url('/fonts/jh-glyphs.ttf?p64v8s') format('truetype'), url('/fonts/jh-glyphs.svg?p64v8s#jh-glyphs') format('svg'); font-weight: normal; font-style: normal;}
