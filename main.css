@@ -125,7 +125,7 @@ a.dribbble-d {color:#000;}
 #social a {display:inline-block; height:22px; width:20px;  padding:14px 8px; border:none; color:#fff; font-size:22px;}
 #social a:hover {border-bottom:1px solid #fff;}
 #nav.white #social a:hover {border-bottom:1px solid #000;}
-#mail-me {display:inline-block; border:1px solid #fff; border-radius:4px; padding:10px 16px 6px 16px; margin:9px 0 0 8px; cursor:pointer; vertical-align:top; color:#fff; font-size: 0.9em; line-height:1; background:none;}
+#mail-me {display:inline-block; border:1px solid #fff; border-radius:4px; padding:8px 16px 8px 16px; margin:9px 0 0 8px; cursor:pointer; vertical-align:top; color:#fff; font-size: 0.9em; line-height:1; background:none;}
 #nav a#mail-me:hover {background-color:#fff; color:#000;}
 
 /* mobile nav icon */
