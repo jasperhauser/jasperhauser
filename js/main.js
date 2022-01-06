@@ -43,8 +43,8 @@ document.getElementById("scroll-top").classList.toggle('show');
 var mobileWidth = 480;
 document.getElementById("mail-me").onclick = function(e){
 	if (window.innerWidth <= mobileWidth) { // mobile, hardcoded in CSS
-		e.stopPropagation();
-		e.preventDefault();
+		// e.stopPropagation();
+		// e.preventDefault();
 		document.getElementById("name").focus();
 		setbackdrop();
 	}
@@ -52,8 +52,8 @@ document.getElementById("mail-me").onclick = function(e){
 
 // open and close the mobile menu
 document.getElementById("hamburger").onclick = function(e){
-	e.stopPropagation();
-	e.preventDefault();
+	// e.stopPropagation();
+	// e.preventDefault();
 	setbackdrop();
 };
 
@@ -121,7 +121,7 @@ function clearHash(){
 // face flip
 var face = document.getElementById("face");
 // setup the events
-face.addEventListener('touchstart', faceFlip);
+face.addEventListener('touchstart', faceFlip, {passive: true});
 face.addEventListener('mouseenter', faceFlip);
 face.addEventListener('mouseleave', faceFlip);
 // flip the damn thing
