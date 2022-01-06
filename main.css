@@ -97,7 +97,7 @@ a.dribbble-d {color:#000;}
 #nav.nav-open.white #hamburger span {background-color:#fff;}
 
 /* scroll down  state */
-#nav.white #nav-bar{background-color:rgba(255,255,255,0.9); background-image:none; backdrop-filter: blur(10px);} /* omg we now have blur, yay!! */
+#nav.white #nav-bar{background-color:rgba(255,255,255,0.9); background-image:none; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);}
 #nav.white a, #nav.white #logo {color:#000;}
 #nav.white #mail-me {color:#000; border-color:#000;}
 #nav.white #mail-me:hover {background-color:#000; color:#fff;} /* this is weird */
