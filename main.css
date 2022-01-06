@@ -21,7 +21,7 @@ input, textarea {font-size:14px; font-family: inherit; padding:8px 12px; margin:
 .placeholder {color:#aaa;}
 input:hover, textarea:hover {border-color:#aaa;}
 input:focus, textarea:focus {border-color:#999;}
-a.button, button {font-size:14px; padding:12px 28px; background-color:#fff; border:1px solid #ccc; border-radius:4px; transition:background-color 0.2s;}
+a.button, button {font-size:14px; padding:12px 28px; background-color:#fff; color:#000; border:1px solid #ccc; border-radius:4px; transition:background-color 0.2s;}
 a.button:hover, button:hover {background-color:#000; color:#fff; border-color:#000;}
 button:disabled:hover {border-color:#ccc;}
 
