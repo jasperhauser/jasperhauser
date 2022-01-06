@@ -87,7 +87,7 @@ a.dribbble-d {color:#000;}
 
 /* nav bar tools */
 #nav-progressbar {height: 100%; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.05);}
-#click-bar {display: block; height: 100%; width:100%; position: absolute; margin: 0 -16px 0 -16px;}
+#click-bar {display: block; height: 100%; width:100%; position: absolute; margin: 0 -16px 0 -16px; text-indent: -9999px; overflow: hidden;}
 
 /* mobile menu open */
 #nav-backdrop {display:none; background-color:#000; z-index:1; width:100%; height:100%; opacity:0;  position:fixed; top:0;}
@@ -316,7 +316,7 @@ footer div {max-width: 720px !important;}
 button.glide__arrow--right:after {display:block; content: ""; position:absolute; width:16px; height:27px;top:50%; margin-top:-14px; right:13px; background: url("images/arrow-right.svg");}
 button.glide__arrow--left:after {display:block; content: ""; position:absolute; width:16px; height:27px;top:50%; margin-top:-14px; right:13px; background: url("images/arrow-left.svg");}
 .glide .glide__bullets {bottom:20px; z-index: unset;}
-.glide .glide__bullet {transition: all 0.2s ease-in-out;}
+.glide button.glide__bullet {transition: all 0.2s ease-in-out; text-indent:-9999px; overflow: hidden;}
 
 
 /* https://icomoon.io/app/#/select */
