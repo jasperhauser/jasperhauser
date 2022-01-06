@@ -305,8 +305,11 @@ footer div {max-width: 720px !important;}
 
 /* Glide */
 .glide img {max-width: 100%;}
-.glide:hover .glide__arrows button {display: block;}
-.glide__arrows button {display:none; position:absolute; height:42px; width:42px; text-indent:-9999px; background-color:rgba(51, 51, 51, 0.5); transition:background-color 0.2s; z-index: unset; padding: 0; box-sizing: border-box; border: none; border-radius: none; box-shadow: none;}
+
+.glide .glide__arrows {display:none;}
+.glide:hover .glide__arrows {display: block;}
+
+.glide__arrows button {position:absolute; height:42px; width:42px; text-indent:-9999px; background-color:rgba(51, 51, 51, 0.5); transition:background-color 0.2s; z-index: unset; padding: 0; box-sizing: border-box; border: none; border-radius: none; box-shadow: none;}
 .glide__arrows button:hover {background-color:rgba(51, 51, 51, 0.75);}
 .glide .glide__arrow--left {cursor:w-resize; left: 10px;}
 .glide .glide__arrow--right {cursor:e-resize; right: 10px;}
@@ -425,9 +428,10 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 	.column-two:last-child {padding:0; margin-top:16px;}
 	.content {max-width:none; min-width:0;}
 	.column-three {display:block; width:100%; padding:0 16px; box-sizing: border-box; -moz-box-sizing: border-box;}
-	.bx-wrapper .bx-controls-direction {display:block; opacity:1.0;} /* no hover on mobile */
-	.bx-wrapper .bx-pager {display:none;} /* remove some clutter */
-
+	
+	.glide .glide__arrows {display: block;} /* no hover on mobile */
+	.glide .glide__bullets {display: none;} /* remove some clutter */
+	
 	#scroll-top {width:48px; height:48px; border-radius:24px;}
 	#scroll-top span {top:21px;}
 	#scroll-top span:first-child {left:11px;}
