@@ -4,8 +4,8 @@
 /* background-color: var(--main-bg-color); */
 
 :root {
-	--black: #000;
-	--trans-black: rgba(0,0,0,0.5);
+	--black: #111;
+	--trans-black: rgba(10,10,10,0.5);
 	--dark-grey:#555;
 	--grey: #999;
 	--light-grey: #aaa;
@@ -69,11 +69,10 @@ button:disabled:hover {border-color:var(--lightest-grey);}
 .grid-3 div a img {border:0; outline:0;} /* making IE rendering suck less */
 
 /* grid accesories */
-.grid-3 div span {position:absolute; bottom:16px; left:16px; color:rgba(255,255,255,0.35); transition:color 0.2s;}
-.grid-3 div span a {color:rgba(255,255,255,0.35);}
-.grid-3 div span.dark, .grid-3 div span.dark a {color:var(--trans-black);} /* no need for hover, not a link */
-.grid-3 div:hover span, .grid-3 div:hover span a {color:var(--white);}
-.grid-3 div:hover span.dark, .grid-3 div:hover span.dark a {color:var(--black);}
+.grid-3 div span {position:absolute; bottom:16px; left:16px; color:rgba(255,255,255,0.7); transition:color 0.2s;}
+.grid-3 div span.dark {color:rgba(0,0,0,0.7);} /* no need for hover, not a link */
+.grid-3 div:hover span {color:#eee;}
+.grid-3 div:hover span.dark {color:#111;}
 
 /* dribble icon/link */ 
 .dribbble, .dribbble-d {font-size:22px; display:none; position:absolute; bottom:8px; right:8px; width:24px; height:24px; opacity:0.6;}
@@ -157,8 +156,8 @@ a.dribbble-d {color:var(--black);}
 
 /* header & title  */
 #header-image {background-color:var(--near-white); height:460px; background-size:cover; background-position:50% 75%; position:relative; max-width:1512px; margin:0 auto; transition: all 0.2s ease-in-out;}
-#copy {font-size:11px; color:rgba(255,255,255,0.3); position:absolute; right:8px; bottom:4px;}
-#copy a {border:none; color:rgba(255,255,255,0.3);}
+#copy {font-size:11px; color:rgba(255,255,255,0.5); position:absolute; right:8px; bottom:4px;}
+#copy a {border:none; color:rgba(255,255,255,0.7);}
 #copy a:hover {color:var(--white);}
 
 /*  scroll nudge */
@@ -223,7 +222,7 @@ ul.mt-year {padding: 0; margin: 0; list-style: none; display: -webkit-box; displ
 #update {text-align:center; color:var(--grey); padding:16px 12px; border-bottom:1px solid var(--lightest-grey); margin-bottom:20px;}
 
 /* intro */
-#currently {padding-top:40px;}
+#currently {padding-top:20px;}
 #currently h4 {margin-bottom:30px;}
 #currently h4 a:hover {color:var(--black); border-bottom:1px solid var(--grey);}
 
@@ -350,7 +349,7 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 .icon-linkedin:before {content: "\eac8";}
 .icon-dr {background-image:url('images/darkroom/darkroom.svg'); width:25px; height:15px; display:inline-block;}
 
-
+/* dark mode */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--black: #fff;
@@ -360,20 +359,24 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 		--light-grey: #555;
 		--lightest-grey: rgb(95, 95, 95);
 		--near-white: rgb(66, 66, 66);
-		--white: #000;
+		--white: #111;
 	}
 
-	#nav-progressbar {background-color: rgba(0, 0, 0, 0.05);}
-	#nav.white #nav-bar {background-color:rgba(0,0,0,0.5);}
+	#nav-progressbar {background-color: rgba(125, 125, 125, 0.2);}
+	#nav.white #nav-bar {background-color:rgba(17,17,17,0.5);}
 	#logo {color: var(--black);}
 	#social a {color: var(--black);}
 		#social a:hover, #logo:hover {border-bottom: 1px solid var(--black);}
 	#hamburger span {background-color: var(--black);}
-	#nav a#mail-me {border-color:var(--black); color: var(--black);}
-		#nav a#mail-me:hover {background-color:var(--black); color: var(--white);}
+	
+	#nav-sections a {color: var(--black);}
+	#nav a#mail-me, #nav.nav-open a#mail-me {border-color:var(--black); color: var(--black);}
+		#nav a#mail-me:hover, #nav.nav-open a#mail-me:hover {background-color:var(--black); color: var(--white);}
 	#nav-backdrop {background-color: var(--white);}
 
-	.column-two img {border-radius: 6px;}
+	#copy a:hover {color:var(--black);}
+	#scroll-top {background-color: var(--near-white);}
+	.column-two .big-image {border-radius: 6px; overflow: hidden;}
 	#dk-left, #dk-right {border-radius: 6px;}
 }
 
@@ -462,6 +465,7 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 	/* tools */
 	h1 {font-size:1.9em;}
 	h2 {text-align:center;}
+	h3 {text-align: left !important; }
 	q {width:100%;}
 	.column-two {width:100%;}
 	.column-two:first-child {padding:0;}
@@ -493,7 +497,7 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 	/* header */
 	#header-image {height:427px; background-position:50% 50%;}
 	/* .brown {background-image:url('images/header/brown-640.jpg');} */
-	#copy {display:none;}
+	/* #copy {display:none;} */
 
 	/* igrid */
 	.grid-3 div.article span.article-title {font-size:14px; line-height:1.2em}
@@ -504,10 +508,10 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 
 	/* feature/full width sections: recent | fb | sofa */
 	#dr, #fb-grid, #fb-mle, #sofa-kaleidoscope {padding:0;}
-	#dr h2, #dr p, #fb-grid p, #fb-mle h2, #fb-mle p, #sofa-kaleidoscope h2, #sofa-kaleidoscope p {padding:0 16px;}
+	#dr h3, #dr p, #fb-grid p, #fb-mle h3, #fb-mle p, #sofa-kaleidoscope h3, #sofa-kaleidoscope p {padding:0 16px;}
 	
 	/* end */
-	#dk-text {margin-top:30px; width:100%;}
+	#dk-text {margin-top:30px; width:100%; text-align: left;}
 	#dk-left {position:relative; margin:0 auto; padding:0; border:1px solid rgba(0,0,0,0.1); border-radius:264px; width:264px; height:264px; top:0; left:0; background-position:50% 50%; box-sizing: border-box; -moz-box-sizing: border-box; background-size:362px; background-image:url("images/project-me-dk-875.jpg");}
 	#dk-right {display:none;}
 	#connect p {margin-top:40px}
