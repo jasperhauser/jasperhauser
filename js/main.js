@@ -5,60 +5,56 @@ timer = 0,
 delta = '',
 newPos = '';
 function clear() {
-lastPos = null;
+	lastPos = null;
 };
 
 window.addEventListener('resize', checkScrollSpeed);
 window.addEventListener('scroll', checkScrollSpeed);
 
 function checkScrollSpeed(){
-var topScrollTrigger = window.innerHeight * 0.5; // nearing the top
-var bottomScrollTrigger = document.body.clientHeight - (window.innerHeight * 1.75); // nearing the bottom
-var newPos = window.scrollY;
+	var topScrollTrigger = window.innerHeight * 0.5; // nearing the top
+	var bottomScrollTrigger = document.body.clientHeight - (window.innerHeight * 1.75); // nearing the bottom
+	var newPos = window.scrollY;
 
-if (lastPos != null){
-	delta = newPos - lastPos;
-}
-// scroll top show
-if (delta < 0 && window.pageYOffset > topScrollTrigger || bottomScrollTrigger <= window.pageYOffset){
-	document.getElementById('scroll-top').classList.add('show');
-}
-// scroll top hide
-   if (bottomScrollTrigger > window.pageYOffset && delta > 0 || window.pageYOffset <= topScrollTrigger){
-	document.getElementById('scroll-top').classList.remove('show');
-}
+	if (lastPos != null){
+		delta = newPos - lastPos;
+	}
+	// scroll top show
+	if (delta < 0 && window.pageYOffset > topScrollTrigger || bottomScrollTrigger <= window.pageYOffset){
+		document.getElementById('scroll-top').classList.add('show');
+	}
+	// scroll top hide
+	if (bottomScrollTrigger > window.pageYOffset && delta > 0 || window.pageYOffset <= topScrollTrigger){
+		document.getElementById('scroll-top').classList.remove('show');
+	}
 
-lastPos = newPos;
-timer && clearTimeout(timer);
-timer = setTimeout(clear, 100);
+	lastPos = newPos;
+	timer && clearTimeout(timer);
+	timer = setTimeout(clear, 100);
 }
 
 // scroll button state
 document.getElementById("scroll-top").onclick = function(){
-document.getElementById("scroll-top").classList.toggle('show');
+	document.getElementById("scroll-top").classList.toggle('show');
 }
 
 
 // mail me link/button behaviour
 var mobileWidth = 480;
-document.getElementById("mail-me").onclick = function(e){
+document.getElementById("mail-me").onclick = function(){
 	if (window.innerWidth <= mobileWidth) { // mobile, hardcoded in CSS
-		// e.stopPropagation();
-		// e.preventDefault();
 		document.getElementById("name").focus();
 		setbackdrop();
 	}
 };
 
 // open and close the mobile menu
-document.getElementById("hamburger").onclick = function(e){
-	// e.stopPropagation();
-	// e.preventDefault();
+document.getElementById("hamburger").onclick = function(){
 	setbackdrop();
 };
 
 // section links on mobile
-document.getElementsByClassName("nav-link").onclick = function(){
+document.getElementById("nav-sections").onclick = function(){
 	setbackdrop();
 };
 

@@ -298,7 +298,7 @@ footer div {max-width: 720px !important;}
 #scroll-top span {top:17px; display:block; width:16px; height:2px; background-color:var(--dark-grey); position:absolute;}
 #scroll-top span:first-child {transform: rotate(-45deg); left:7px;}
 #scroll-top span:last-child {transform: rotate(45deg); rotate: (45deg); left:17px;}
-#scroll-top:hover {box-shadow:0px 4px 14px rgba(0,0,0,0.25); background-color:var(--white));} /* -webkit-transform:scale(1.05); */
+#scroll-top:hover {box-shadow:0px 4px 14px rgba(0,0,0,0.25); background-color:var(--white);} /* -webkit-transform:scale(1.05); */
 #scroll-top.show {display:block; }
 
 /* HUD */
@@ -370,6 +370,8 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 	#hamburger span {background-color: var(--black);}
 	
 	#nav-sections a {color: var(--black);}
+	#nav.nav-open.white a, #nav.nav-open.white #logo {color: var(--black);}
+	#nav.nav-open.white #hamburger span {background-color: var(--black);}
 	#nav a#mail-me, #nav.nav-open a#mail-me {border-color:var(--black); color: var(--black);}
 		#nav a#mail-me:hover, #nav.nav-open a#mail-me:hover {background-color:var(--black); color: var(--white);}
 	#nav-backdrop {background-color: var(--white);}
@@ -487,7 +489,7 @@ button.glide__arrow--left:after {display:block; content: ""; position:absolute; 
 	#nav.nav-open #nav-sections {display:block;}
 	#nav.nav-open #nav-options {display:block;} /* after touch let's show stuff */
 	#nav.nav-open div.content {position:fixed; height:100%; width:100%; padding:0; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; transform-style: preserve-3d;}
-	#nav-options {display:none; width:100%; text-align:center; padding:0; position:absolute; top:55%; transform:translateY(-50%);}
+	#nav-options {display:none; width:100%; text-align:center; padding:0; position:absolute; top:50%; transform:translateY(-50%);}
 	#social {display:block; width:280px; margin:0 auto;}
 	#social a {display:inline-block; padding:0px; width:32px; height:32px; margin:18px 20px; font-size:32px;}
 		#social a:hover {background-color:rgba(0,0,0,0); border-bottom:none;}
