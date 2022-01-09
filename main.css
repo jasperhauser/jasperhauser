@@ -173,7 +173,7 @@ a.dribbble-d {color:var(--black);}
 @keyframes FloatingX{0% {transform:translate(0, 0px);} 65% {transform:translate(0, 10px);} 100% {transform: translate(0, 0px);}}
 
 /* subheader timeline */
-.subheader-timeline {height:52px; position:relative; width:50%; margin:0 auto;}
+.subheader-timeline {height:52px; position:relative; width:50%; margin:10px auto 0 auto;}
 	.subheader-timeline:hover h4 {display:none;}
 	.subheader-timeline:hover .mini-timeline {display: -ms-flex; display: -webkit-flex; display: flex;}
 .subheader-timeline h4 {margin-top:0; padding-top:8px;}
